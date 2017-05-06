@@ -1,0 +1,56 @@
+<div class="panel">
+  <div class="panel-heading">
+    <h1>
+      Legend
+    </h1>
+    <button type="button" class="btn btn-warning btn-fab btn-fab-mini" routerLink="/home"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+
+  </div>
+  <div class="panel-body">
+    <form class="form-horizontal" (ngSubmit)="submit()">
+      <fieldset>
+        <div class="form-group">
+          <label for="name" class="col-md-2 control-label">Name</label>
+          <div class="col-md-10">
+            <input type="text" class="form-control" id="name" [(ngModel)]="obj.name" name="name" placeholder="Name" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="country" class="col-md-2 control-label">Country</label>
+          <div class="col-md-10">
+            <input type="text" class="form-control" id="country" [(ngModel)]="obj.country" name="country" placeholder="Country" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="city" class="col-md-2 control-label">City</label>
+          <div class="col-md-10">
+            <input type="text" class="form-control" id="city" [(ngModel)]="obj.city" name="city" placeholder="City" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="address" class="col-md-2 control-label">Address</label>
+          <div class="col-md-10">
+            <input type="text" class="form-control" id="address" [(ngModel)]="obj.address" name="address" placeholder="Address" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email" class="col-md-2 control-label">Email</label>
+          <div class="col-md-10">
+            <input type="email" class="form-control" id="email" [(ngModel)]="obj.email" name="email" placeholder="Email">
+          </div>
+        </div>
+        <div class="form-group" *ngIf="msg">
+          <div class="col-md-10 col-md-offset-2">
+            <span class="label" [class.label-danger]="msg.code!=200" [class.label-success]="msg.code==200" >{{msg.body}}</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-10 col-md-offset-2">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-default" routerLink="/home">Cancel</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
